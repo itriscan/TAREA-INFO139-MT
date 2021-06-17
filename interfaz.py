@@ -116,4 +116,4 @@ print("Estado inicial: "+ inicial)
 print("Estado final: "+ final)
 print("la palabra es: "+ palabra)
 EIF = [final,inicial]
-print(E)
+print(EIF)
