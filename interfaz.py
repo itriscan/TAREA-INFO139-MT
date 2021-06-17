@@ -58,7 +58,6 @@ def entradaTransiciones():
     botonGuardar.grid(row=3,column=11)
     botonTerminar=Button(miFrame,text="Terminar")
     botonTerminar.grid(row=3,column=13)
-    return
 
 
 
@@ -86,10 +85,9 @@ c7.config(justify="center")
 botonGuardar1=Button(miFrame,text="Guardar",command=codigoBoton)
 botonGuardar1.grid(row=2,column=3)
 
-
+#------------Estado Inicial y Final guardados en las variables inicial y final respectivamente
 
 # Funcion para guardar la 'Palabra' de entrada
-
 
 def guardarPalabra():
     global palabra
@@ -103,7 +101,7 @@ c8.grid(row=10,column=1)
 c8.config(justify="center")
 botonGuardar2=Button(miFrame,text="Guardar", command=guardarPalabra)
 botonGuardar2.grid(row=10,column=3)
-#-----------------palabra de entrada guardada en la variable pal
+#-----------------palabra de entrada guardada en la variable pal------------
 
 
 Empezar = False
@@ -117,5 +115,5 @@ raiz.mainloop()
 print("Estado inicial: "+ inicial)
 print("Estado final: "+ final)
 print("la palabra es: "+ palabra)
-E = [final,inicial]
+EIF = [final,inicial]
 print(E)
