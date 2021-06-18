@@ -1,8 +1,8 @@
 from tkinter import*
 #estado = bool()
-raiz = Tk()
+raiz = Tk() 
 raiz.title("MT")
-raiz.geometry("5000x3000")
+raiz.geometry("1660x500")
 
 miFrame = Frame(raiz)
 miFrame.pack(fill="both", expand="True")
@@ -56,8 +56,8 @@ def entradaTransiciones():
 
     botonGuardar=Button(miFrame,text="Guardar")
     botonGuardar.grid(row=3,column=11)
-    botonTerminar=Button(miFrame,text="Terminar")
-    botonTerminar.grid(row=3,column=13)
+    botonAñadir=Button(miFrame,text="Añadir")
+    botonAñadir.grid(row=3,column=13)
 
 
 
@@ -87,7 +87,7 @@ botonGuardar1.grid(row=2,column=3)
 
 #------------Estado Inicial y Final guardados en las variables inicial y final respectivamente
 
-# Funcion para guardar la 'Palabra' de entrada
+#---------------Funcion para guardar la Palabra de entrada------------------------
 
 def guardarPalabra():
     global palabra
@@ -101,19 +101,21 @@ c8.grid(row=10,column=1)
 c8.config(justify="center")
 botonGuardar2=Button(miFrame,text="Guardar", command=guardarPalabra)
 botonGuardar2.grid(row=10,column=3)
-#-----------------palabra de entrada guardada en la variable pal------------
+#-----------------palabra de entrada guardada en la variable 'palabra'------------
+
+def agregarTransicion():
+    entradaTransiciones()    
 
 
-Empezar = False
+
+Empezar = True
 if Empezar==True:
-    entradaTransiciones()
+    agregarTransicion()
+    c = 4
 
 
 
 
 raiz.mainloop()
-print("Estado inicial: "+ inicial)
-print("Estado final: "+ final)
-print("la palabra es: "+ palabra)
-EIF = [final,inicial]
-print(EIF)
+
+EIF = [int(final),int(inicial)]
