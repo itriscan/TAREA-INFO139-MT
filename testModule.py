@@ -24,7 +24,7 @@ def probarPalabra(a,transiciones,inicial,final):
                 break
         if not encontrada:
             print("Palabra no aceptada")
-            return
+            return (False)
     if encontrada:
         print("Palabra aceptada correctamente")
-    return
+    return (True)

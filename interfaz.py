@@ -1,4 +1,5 @@
 from tkinter import*
+from testModule import *
 #estado = bool()
 raiz = Tk() 
 raiz.title("MT")
@@ -148,9 +149,9 @@ botonGuardar1.grid(row=2,column=3)
 def guardarPalabra():
     global palabra
     palabra = c8.get()
+    ultimaPalabraAceptada = probarPalabra(palabra,A,inicial,final)
     c8.delete(0, END)
     print(palabra)
-
 
 text1=Label(miFrame,text="Palabra: ")
 text1.grid(row=10, column=0,sticky="e")
