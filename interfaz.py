@@ -11,14 +11,10 @@ welcome=Label(miFrame,text="Bienvenid@ a la Maquina de Turing")
 welcome.grid(row=0,column=0, columnspan=13)
 global c
 c = 5
-#def empezarBoton():
-#   estado.set(True)
 
-#   return estado
-#botonEmpezar=Button(miFrame,text="Empezar", command=empezarBoton)
-#botonEmpezar.grid(row=0,column=1)
-
-
+def borrarTransiciones():
+    A=[]
+    return
 # la funcion EntradaTransiciones es para mostrar el espacion donde se escribiran las transiciones
 # estas seran escritas de la forma d(nodo_inicial, caracter_que_lee)=(nodo_destino, caracter que escribe, desplazamiento)
 def entradaTransiciones(i):
@@ -62,7 +58,7 @@ def entradaTransiciones(i):
     parentc.grid(row=i,column=10)
     botonGuardar=Button(miFrame,text="Guardar",command=guardaTransiciones)
     botonGuardar.grid(row=5,column=13,columnspan=1)
-    botonTerminar=Button(miFrame,text="Terminar")
+    botonTerminar=Button(miFrame,text="Terminar",command=borrarTransiciones)
     botonTerminar.grid(row=5,column=14,columnspan=1)
 
 
@@ -150,6 +146,12 @@ def guardarPalabra():
     global palabra
     palabra = c8.get()
     ultimaPalabraAceptada = probarPalabra(palabra,A,inicial,final)
+    if L:
+        textf=Label(miFrame,text="         Palabra aceptada      ")
+        textf.grid(row=14, column=0,sticky="e")
+    else:
+        textf=Label(miFrame,text="         Palabra rechazada     ")
+        textf.grid(row=14, column=0,sticky="e")
     c8.delete(0, END)
     print(palabra)
 
@@ -162,19 +164,6 @@ botonGuardar2=Button(miFrame,text="Probar", command=guardarPalabra)
 botonGuardar2.grid(row=10,column=3)
 #-----------------palabra de entrada guardada en la variable 'palabra'------------
 
-#def agregarTransicion():
-#    entradaTransiciones()    
-
-
-
-#Empezar = True
-#if Empezar==True:
-#    agregarTransicion()
-#    c = 4
-
-
 
 
 raiz.mainloop()
-
-EIF = [int(final),int(inicial)]
