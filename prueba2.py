@@ -11,14 +11,7 @@ miFrame = Frame(raiz)
 miFrame.pack(fill="both", expand="True")
 welcome=Label(miFrame,text="Bienvenid@ a la Maquina de Turing")
 welcome.grid(row=0,column=0, columnspan=13)
-def creaArregloTransiciones():
-    A = []
-    L = True
-    while L:
-        deltsi=guardaTransiciones()
-        A+=[deltsi]
-        print(A)
-    return
+
 
 def entradaTransiciones(i):
     delta=Label(miFrame,text="d(")
@@ -60,7 +53,7 @@ def entradaTransiciones(i):
     parentc.grid(row=i,column=10)
     botonGuardar=Button(miFrame,text="Guardar",command=guardaTransiciones)
     botonGuardar.grid(row=5,column=13,columnspan=1)
-    botonTerminar=Button(miFrame,text="Terminar",command=creaArregloTransiciones)
+    botonTerminar=Button(miFrame,text="Terminar")
     botonTerminar.grid(row=5,column=14,columnspan=1)
     
 def añadirTransiciones():
