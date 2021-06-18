@@ -7,9 +7,9 @@ def strToList(a):
 
 estadoInicial = input("Ingrese numero del estado Inicial: ")
 estadoFinal = input("Ingrese numero del estado Final: ")
-estadoActual = estadoInicial
 
-transiciones = [['1', 'a', '2', 'a', 'D'],['2', 'b', '3', 'b', 'D'],['3', 'c', '4', 'c', 'D'],['4', 'a', '2', 'a', 'D'],['4', 'B', '5', 'B', 'I']]
+
+transiciones = [['0','a','1','X','D'],['0','Y','3','Y','D'],['1','a','1','a','D'],['1','b','2','Y','I'],['1','Y','1','Y','D'],['2','a','2','a','I'],['2','X','0','X','D'],['2','Y','2','Y','I'],['3','b','4','Y','D'],['3','Y','3','Y','D'],['4','b','4','Y','D'],['4','B','5','B','I']]
 q = False
 
 while q == False:
@@ -21,12 +21,12 @@ while q == False:
         transiciones.append(entr)
     else:
         q = True
-    print(entr)
 
 
 palabraEntrada = input()
-if palabraEntrada != "":
-    print("Palabra distinta de vacio")
+while palabraEntrada != "q":
+    print("Probando palabra: ",palabraEntrada)
+    estadoActual = estadoInicial
     palabra = strToList(palabraEntrada)
     palabra = ["B"] + palabra + ["B"]
     index = 1
@@ -35,16 +35,16 @@ if palabraEntrada != "":
         for i in transiciones:
             if (i[0] == str(estadoActual) ) and ( i[1] == palabra[index] ):
                 encontrada = True
-                print(index,i[2],i[3],i[4])
                 estadoActual = i[2]
                 palabra[index] = i[3]
                 if i[4] == "D":
                     index +=1
-                else:
+                elif i[4] == "I":
                     index -=1
+                break
         if not encontrada:
             print("Palabra no aceptada")
             break
     if encontrada:
         print("Palabra aceptada correctamente")
-
+    palabraEntrada = input()
