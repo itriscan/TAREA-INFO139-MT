@@ -12,9 +12,7 @@ welcome.grid(row=0,column=0, columnspan=13)
 global c
 c = 5
 
-def borrarTransiciones():
-    A=[]
-    return
+
 # la funcion EntradaTransiciones es para mostrar el espacion donde se escribiran las transiciones
 # estas seran escritas de la forma d(nodo_inicial, caracter_que_lee)=(nodo_destino, caracter que escribe, desplazamiento)
 def entradaTransiciones(i):
@@ -58,8 +56,7 @@ def entradaTransiciones(i):
     parentc.grid(row=i,column=10)
     botonGuardar=Button(miFrame,text="Guardar",command=guardaTransiciones)
     botonGuardar.grid(row=5,column=13,columnspan=1)
-    botonTerminar=Button(miFrame,text="Terminar",command=borrarTransiciones)
-    botonTerminar.grid(row=5,column=14,columnspan=1)
+
 
 
 #---------al presionar el boton añadir se hace un llamado a la funcion entradaTransiciones() que crea en la interfaz el recuadro para añadir las transiciones
@@ -77,8 +74,6 @@ def creaDelta():
     Dezplazamiento = c5.get()
     delta =[EstadoInicial,CaracterInicial,EstadoFinal,CaracterFinal,Dezplazamiento]
     return delta
-
-
 
 
 def guardaTransiciones():
@@ -146,12 +141,12 @@ def guardarPalabra():
     global palabra
     palabra = c8.get()
     ultimaPalabraAceptada = probarPalabra(palabra,A,inicial,final)
-    if L:
+    if ultimaPalabraAceptada:
         textf=Label(miFrame,text="         Palabra aceptada      ")
-        textf.grid(row=14, column=0,sticky="e")
+        textf.grid(row=14, column=0,sticky="e",columnspan=13)
     else:
         textf=Label(miFrame,text="         Palabra rechazada     ")
-        textf.grid(row=14, column=0,sticky="e")
+        textf.grid(row=14, column=0,sticky="e",columnspan=13)
     c8.delete(0, END)
     print(palabra)
 
